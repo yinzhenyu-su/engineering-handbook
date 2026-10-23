@@ -265,7 +265,7 @@ def find_min_rotated(nums):
 
 分支判断在迭代之间来回翻。第一轮，目标在有序左半之外，算法跳到被旋转的右半。第二轮，目标落在新范围的有序左半之内。下面的交互组件在 panel B 上把这条轨迹逐步刷过去；panel A 就是 2.1 章那个，挨在旁边，在未旋转的输入上动画演示同一套模板，这样你能看出旋转的分支判断是叠在同一套指针舞蹈之上的*一层*。
 
-> **Interactive widget:** [Binary search (exact-match + rotated)](../../../dsa/widgets/w-04-binary-search.yml)（面板 `panel-b`）—— 在网站上渲染；YAML 描述文件里是关键帧。
+> **Interactive widget:** [二分查找（精确匹配 + 旋转数组）](../../../dsa/widgets/w-04-binary-search.yml)（面板 `panel-b`）—— 在网站上渲染；YAML 描述文件里是关键帧。
 
 *静态回退：从标准轨迹里取四帧——初始状态、第一次分支判断（目标不在有序左半）、第二次分支判断（目标在新范围的有序左半）、下标 4 处命中。*
 

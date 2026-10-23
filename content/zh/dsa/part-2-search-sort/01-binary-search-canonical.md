@@ -99,7 +99,7 @@ def search(nums, target):
 
 `n = 7` 时三次比较。上界是 `ceil(log_2 8) = 3` 次比较，再加一轮空区间的守卫触发。下面的交互组件动画演示的正是这条轨迹；选到“目标不存在”预设后逐帧看。
 
-> **Interactive widget:** [Binary search (exact-match + rotated)](../../../dsa/widgets/w-04-binary-search.yml)（面板 `panel-a`）——在网站上渲染；YAML 规格描述各关键帧。
+> **Interactive widget:** [二分查找（精确匹配 + 旋转数组）](../../../dsa/widgets/w-04-binary-search.yml)（面板 `panel-a`）——在网站上渲染；YAML 规格描述各关键帧。
 
 *静态备用图：取自“目标不存在”预设的四帧，展示闭区间从 `[0, 6]` 缩到 `[0, 2]`、`[2, 2]`，最后为空。*
 

@@ -190,7 +190,7 @@ def find_cheapest_price(n: int, flights: List[List[int]], src: int, dst: int, k:
 
 组件动的是这段两边推演，外加一张更丰富的五顶点图，让你看着提前终止优化触发，以及第 `|V|` 趟是放行还是报警。
 
-> **Interactive widget:** [Bellman-Ford with negative-cycle detection](../../../dsa/widgets/w-37-bellman-ford.yml) (panel `default`) — rendered on the website; the YAML spec describes the keyframes.
+> **Interactive widget:** [Bellman-Ford 负环检测](../../../dsa/widgets/w-37-bellman-ford.yml)（面板 `default`）—— 在网站上渲染；YAML 规格描述了各个关键帧。
 
 *静态回退版：在标准的 5 节点 CLRS 图上，跑到 `|V| - 1 = 4` 趟就终止，`dist = [0, 2, 7, 4, -2]`；第 3 趟什么都没松弛，所以聪明的实现在收敛时跳出循环，而教科书版本会把四趟跑满；第 V 趟也不松弛，确认从 `0` 不可达任何负环。*
 
@@ -204,7 +204,7 @@ def find_cheapest_price(n: int, flights: List[List[int]], src: int, dst: int, k:
 
 组件的第二个面板（`neg_cycle`）动的是这 20 步的完整推演；同一份代码在标准输入上打印出干净的 `dist`，在这里则在第 18 步停下，挂出朱红横幅。
 
-> **Interactive widget:** [Bellman-Ford with negative-cycle detection](../../../dsa/widgets/w-37-bellman-ford.yml) (panel `neg_cycle`) — rendered on the website; the YAML spec describes the keyframes.
+> **Interactive widget:** [Bellman-Ford 负环检测](../../../dsa/widgets/w-37-bellman-ford.yml)（面板 `neg_cycle`）—— 在网站上渲染；YAML 规格描述了各个关键帧。
 
 *静态回退版：4 顶点图，带负三角形 `1 -> 2 -> 3 -> 1`（和为 -2）。三趟之后 `dist` 是发散的——`[0, 1, 3, -2]`、`[0, -3, 1, -4]`、`[0, -5, -1, -6]`——而不是收敛。第 `|V|` 趟检出一条仍在松弛的边，于是返回负环标志，取代距离数组。*
 

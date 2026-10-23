@@ -204,7 +204,7 @@ flowchart LR
 
 *最小生成树。Kruskal 和 Prim 产出的都是这同样的六条边；下一章会把 Prim 走到同一答案的过程动画化。*
 
-> **Interactive widget:** [MST: Kruskal + Prim (side-by-side)](../../../dsa/widgets/w-30-mst-kruskal-prim.yml)（面板 `panel-kruskal`）——在网站上渲染；YAML 规格描述了各个关键帧。
+> **Interactive widget:** [最小生成树：Kruskal 与 Prim 并排对比](../../../dsa/widgets/w-30-mst-kruskal-prim.yml)（面板 `panel-kruskal`）——在网站上渲染；YAML 规格描述了各个关键帧。
 
 *静态回退：经典图上的 23 步推演。六次接受（绿色），四次拒绝（朱红），一条边因提前 break 被跳过（天蓝）。最终 mst_weight = 31，accepted = 6 = n - 1。*
 

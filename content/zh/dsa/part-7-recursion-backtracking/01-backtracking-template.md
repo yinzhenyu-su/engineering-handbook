@@ -205,7 +205,7 @@ Part 7 里的问题原样搬走骨架，只填这四格。子集在每个节点�
 
 把第 1 行和第 10 行对着读。第一个顶层分支选了 `'a'`；十行之后这次选择有了配对的撤销。中间，`'a'` 之下的子树跑完了（三次输出、三次 push、三次 pop），`path` 回到 `['a']`，最后一次 pop 再把它带回 `[]`。for 循环在第 11 行开始下一轮时，`path` 正是第 1 行该分支开始之前的样子。兄弟分支 `'b'` 和 `'c'` 与 `'a'` 完全同构，因为它们都从同一个状态出发。
 
-> **Interactive widget:** [Backtracking decision tree](../../../dsa/widgets/w-22-backtracking-tree.yml)（面板 `panel-template`）— 在网站上渲染；YAML 规格描述了各个关键帧。
+> **Interactive widget:** [回溯决策树](../../../dsa/widgets/w-22-backtracking-tree.yml)（面板 `panel-template`）— 在网站上渲染；YAML 规格描述了各个关键帧。
 
 *静态回退：树 3 × 3 地展开到九个叶子；从根到叶的路径上每一次选择都有配对的撤销；每次回退时 path 少一个元素，直到该深度上的下一个兄弟开始。*
 

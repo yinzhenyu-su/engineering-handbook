@@ -135,7 +135,7 @@ def daily_temperatures(temperatures: List[int]) -> List[int]:
 
 第 7 天的值是 73，比 76 小。不弹出，只压入。栈是 `[6, 7]`。循环结束。下标 6 和 7 保留 `answer[i] = 0` 的默认值；数组里它们都没有更暖的一天。
 
-> **Interactive widget:** [Monotonic stack (next-greater scan)](../../../dsa/widgets/w-11-monotonic-stack.yml)（面板 `default`）—— 在网站上渲染；YAML 规格描述各关键帧。
+> **Interactive widget:** [单调栈（下一个更大元素扫描）](../../../dsa/widgets/w-11-monotonic-stack.yml)（面板 `default`）—— 在网站上渲染；YAML 规格描述各关键帧。
 
 *静态回退：第 4 天之后栈长到 `[2, 3, 4]`，在第 5 天触发第一条弹出链之前达到峰值；第 6 天那次戏剧性的定案，是在等了四天之后打印出 `answer[2] = 4`。*
 
