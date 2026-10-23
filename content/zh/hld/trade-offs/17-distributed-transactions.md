@@ -53,7 +53,7 @@ sequenceDiagram
 
 *prepare 应答到 commit 之间这段窗口，正是协调者崩溃后参与者会无限期持锁的地方——2PC 的根本阻塞问题。*
 
-## 横向对比
+## 逐项对比
 
 | 维度 | 2PC（XA、Spanner） | Saga（Temporal、Step Functions） | TCC（Seata） |
 |---|---|---|---|
@@ -68,7 +68,7 @@ sequenceDiagram
 
 这张表漏掉了一个维度：运营成熟度。2PC 在单个数据库内部是成熟工艺（Spanner、CockroachDB 都替你透明处理）。Saga 的工具链（Temporal、Cadence）已经生产可用，但要求团队守住工作流确定性的纪律[^8]。TCC 是小众路线：Seata 是唯一主流的开源实现，而它的 fence log（围栏日志）管线并不简单[^7]。
 
-## 何时选 2PC
+## 何时选择 2PC
 
 **严格的 ACID 是监管要求。** 财务对账、复式记账的账目提交、任何“部分提交即违规”的合规系统。Google Spanner 用 TrueTime 在 Paxos 组之上跑 2PC，在全球规模上给出外部一致性[^9][^10]。
 
@@ -78,7 +78,7 @@ sequenceDiagram
 
 **你在造数据库，而不是在用数据库。** 如果你掌控存储层，Paxos Commit 能消掉阻塞问题。Spanner、CockroachDB、TiDB 都在内部跑 2PC，应用开发者根本看不见它。
 
-## 何时选 Saga
+## 何时选择 Saga
 
 **跨服务的长时间业务流程。** 订单履约、行程预订、员工入职。每一步本地提交；编排器跨分钟甚至跨天跟踪进度[^2][^11]。
 
@@ -88,7 +88,7 @@ sequenceDiagram
 
 **团队已经在用 Temporal、Cadence 或 Step Functions。** 这些编排器把工作流状态持久化下来，带退避地重试活动，并让补偿序列可调试[^8]。Uber 披露 Cadence 在内部支撑了 1000 多个服务，每月运行超过 120 亿次工作流执行、2700 亿次 action，覆盖长流程工作流、微服务编排和分布式定时任务[^8]。
 
-## 混合路径
+## 混合路线
 
 2025 年的生产默认，既不是纯 Saga，也不是纯 2PC，更不是纯 TCC，而是：**Saga 编排 + 事务性发件箱（transactional outbox）+ 幂等键**。这套组合让状态变更与事件之间具备至少一次投递的原子性，却完全不需要分布式事务协议。
 

@@ -62,7 +62,7 @@ flowchart LR
 
 范围扫描是另一个隐蔽的差距。在 PostgreSQL 和 InnoDB 里，B 树的叶子页是双向链接的，范围扫描就是一次顺序遍历。LSM 的范围扫描必须把每一层的迭代器归并起来，因为布隆过滤器只对点查有用[^9]。
 
-## 何时选 B 树
+## 何时选择 B 树
 
 **读占主导、且 p99 SLO 是硬指标的 OLTP。** 读写比超过 10:1 的 Web 应用。用户信息查询、订单历史、会话读取。PostgreSQL 和 InnoDB 处理这类请求只需 3-4 次页 I/O，与表大小无关[^4][^10]。
 
@@ -74,7 +74,7 @@ flowchart LR
 
 **代表系统：** PostgreSQL、MySQL/InnoDB、SQLite、Oracle、SQL Server。
 
-## 何时选 LSM 树
+## 何时选择 LSM 树
 
 **写密集的写入场景，且吞吐上限很关键。** 时序数据、事件溯源、日志聚合、IoT 遥测。同样的闪存上，LSM 能撑住的写入速率最高可达 B 树的 10 倍以上[^1][^11]。
 
@@ -86,7 +86,7 @@ flowchart LR
 
 **代表系统：** RocksDB、LevelDB、Cassandra、ScyllaDB、CockroachDB（Pebble）、TiKV、BadgerDB。
 
-## 混合路径
+## 混合路线
 
 大多数生产系统不会所有场景都只用一个引擎。实用的混合策略有：
 

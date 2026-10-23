@@ -174,7 +174,7 @@ flowchart LR
 
 **可观测性：** 上报 `ids_per_second_per_worker`、`clock_drift_ms`、`sequence_exhaustion_events`、`worker_id_reassignments` 四组指标。
 
-## 深入剖析
+## 深入探讨
 
 ### Snowflake 位布局解剖
 

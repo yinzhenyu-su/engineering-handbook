@@ -55,7 +55,7 @@ sequenceDiagram
 
 *单事件网络成本：短轮询每次检查都付全额 HTTP 开销；WebSocket 用一次握手摊薄到数千个帧上。*
 
-## 横向对比
+## 逐项对比
 
 | 维度 | 短轮询 | 长轮询 | SSE | WebSockets | Webhooks |
 |---|---|---|---|---|---|
@@ -100,7 +100,7 @@ WebSockets 在双向、低开销、持久通信是硬需求时胜出：
 
 代价是：WebSocket 连接是有状态的。你需要会话保持路由、一个 pub/sub 骨干（Redis、Kafka、NATS）让任意网关都能推给任意用户，以及应用层的重连与序列号重放[^8][^9]。SSE 的重连是白送的；WebSocket 得自己造。
 
-## 混合路径
+## 混合路线
 
 多数生产系统按接收方类型组合多种模式。Slack 的架构是经典例子：早期的 Real Time Messaging API 是每个应用在每个工作区一条 WebSocket 连接。Slack 废弃了它，换成 Events API——对服务端集成走 HTTP webhook 投递，对防火墙后面的应用提供 “Socket Mode”（由 Slack 主动发起的 WebSocket）[^10][^11]。
 
