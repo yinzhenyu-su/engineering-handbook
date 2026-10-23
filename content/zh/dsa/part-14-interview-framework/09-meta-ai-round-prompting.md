@@ -78,7 +78,7 @@ flowchart LR
 
 在策略和实现之间，找一次机会问 AI：
 
-> "I plan to solve this with `[your approach in three sentences]`. List the four most likely failure modes: missed edge cases, performance traps, incorrect assumptions, or constraint violations. Do not propose a different approach."
+> 直接把这段发给 AI：“I plan to solve this with `[your approach in three sentences]`. List the four most likely failure modes: missed edge cases, performance traps, incorrect assumptions, or constraint violations. Do not propose a different approach.”
 
 这一问把 AI 从代码生成器（它会出错）变成对抗式审查者（它此时稳定有用）。它的模式库里存着成千上万个“方案 X 在输入 Y 上失效”的例子；把问题框成“找出失效模式”，就能取到这份知识，又不会招来 AI 重设计你的方案。它还会产出一个你能回应的东西，让面试官听到你说“AI 指出边界上有 off-by-one，我是这么防的”——这类回应明确计入 Communication 分数。
 
