@@ -16,6 +16,8 @@
 
 [HLD Handbook](#the-hld-handbook) · [DSA Handbook](#the-dsa-handbook) · [AI Engineering Handbook](#the-ai-engineering-handbook) · [从哪里开始](#从哪里开始) · [学习计划](#学习计划) · [参与贡献](#参与贡献) · [常见问题](#常见问题)
 
+**English: [README.md](README.md)**
+
 </div>
 
 ---

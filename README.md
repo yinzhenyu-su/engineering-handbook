@@ -16,6 +16,8 @@ System design, data structures and algorithms, and AI engineering, each taught i
 
 [HLD Handbook](#the-hld-handbook) · [DSA Handbook](#the-dsa-handbook) · [AI Engineering Handbook](#the-ai-engineering-handbook) · [Where to start](#where-to-start) · [Study plans](#study-plans) · [Contributing](#contributing) · [FAQ](#faq)
 
+**简体中文：[README.zh.md](README.zh.md)**
+
 </div>
 
 ---
